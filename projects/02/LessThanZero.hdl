@@ -1,0 +1,16 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/FullAdder.hdl
+
+/**
+ * Computes whether two 16 bit buses are equal
+ */
+
+CHIP LessThanZero {
+    IN a[16];  // 1-bit inputs
+    OUT out;   // 1 if a == b else 0
+
+    PARTS:
+    Eq(a=a[15], b=true, out=out);
+}

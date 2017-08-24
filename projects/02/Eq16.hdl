@@ -1,0 +1,35 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/FullAdder.hdl
+
+/**
+ * Computes whether two 16 bit buses are equal
+ */
+
+CHIP Eq16 {
+    IN a[16], b[16];  // 1-bit inputs
+    OUT out;          // 1 if a == b else 0
+
+    PARTS:
+    Eq(a=a[0], b=b[0], out=eq0);
+    Eq(a=a[1], b=b[1], out=eq1);
+    Eq(a=a[2], b=b[2], out=eq2);
+    Eq(a=a[3], b=b[3], out=eq3);
+    Eq(a=a[4], b=b[4], out=eq4);
+    Eq(a=a[5], b=b[5], out=eq5);
+    Eq(a=a[6], b=b[6], out=eq6);
+    Eq(a=a[7], b=b[7], out=eq7);
+    Eq(a=a[8], b=b[8], out=eq8);
+    Eq(a=a[9], b=b[9], out=eq9);
+    Eq(a=a[10], b=b[10], out=eq10);
+    Eq(a=a[11], b=b[11], out=eq11);
+    Eq(a=a[12], b=b[12], out=eq12);
+    Eq(a=a[13], b=b[13], out=eq13);
+    Eq(a=a[14], b=b[14], out=eq14);
+    Eq(a=a[15], b=b[15], out=eq15);
+    And16InRow(a=eq0, b=eq1, c=eq2, d=eq3, e=eq4,
+               f=eq5, g=eq6, h=eq7, i=eq8, j=eq9,
+               k=eq10, l=eq11, m=eq12, n=eq13, o=eq14, p=eq15, out=out);
+
+}
