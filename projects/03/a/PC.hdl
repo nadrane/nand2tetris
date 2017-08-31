@@ -10,11 +10,31 @@
  * else if (inc[t] == 1)   out[t+1] = out[t] + 1  (integer addition)
  * else                    out[t+1] = out[t]
  */
-
+/*
+000 a PreviousValue
+001 b reset
+010 c increment
+011 d reset
+100 e load
+101 f reset
+110 g load
+111 h reset
+*/
 CHIP PC {
     IN in[16],load,inc,reset;
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    //handle increment
+    Inc16(in=lastVal, out=lastValPlusOne);
+    Mux16(a=lastVal, b=lastValPlusOne, sel=inc, out=w1);
+
+
+    //handle load
+    Mux16(a=w1, b=in, sel=load, out=w2);
+
+    //handle reset
+    Mux16(a=w2, b=false, sel=reset, out=w3);
+
+    Register(in=w3, out=out, load=true, out=lastVal);
 }
