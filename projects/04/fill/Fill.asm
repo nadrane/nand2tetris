@@ -23,7 +23,7 @@ M=0
 0;JMP
 (BLACK)
 @color
-M=1
+M=-1
 (WRITE)
 @SCREEN
 D=A
