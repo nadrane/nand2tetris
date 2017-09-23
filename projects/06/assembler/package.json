@@ -1,0 +1,20 @@
+{
+  "name": "assembler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hack.js",
+  "scripts": {
+    "debug": "node --inspect-brk=5858 scripts/parser.js tests/rect-symbols.asm",
+    "start": "node scripts/parser.js tests/Pong.asm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.74",
+    "@types/node": "^8.0.30"
+  }
+}
